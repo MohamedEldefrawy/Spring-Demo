@@ -3,7 +3,23 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
     <bean id="triangle" class="com.example.springdemo.Triangle">
-        <constructor-arg value="Test"/>
+        <!--        <constructor-arg value="Equilateral"/>-->
+        <constructor-arg type="int" value="20"/>
+        <constructor-arg ref="a"/>
+        <constructor-arg ref="b"/>
+        <constructor-arg ref="c"/>
         <!--        <property name="type" value="Equilateral"/>-->
+    </bean>
+    <bean id="a" class="com.example.springdemo.Point">
+        <property name="x" value="5"/>
+        <property name="y" value="5"/>
+    </bean>
+    <bean id="b" class="com.example.springdemo.Point">
+        <property name="x" value="5"/>
+        <property name="y" value="5"/>
+    </bean>
+    <bean id="c" class="com.example.springdemo.Point">
+        <property name="x" value="5"/>
+        <property name="y" value="5"/>
     </bean>
 </beans>
