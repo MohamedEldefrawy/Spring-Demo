@@ -1,8 +1,6 @@
 package com.example.springdemo;
 
-import org.springframework.beans.factory.InitializingBean;
-
-public class Triangle implements InitializingBean {
+public class Triangle {
     private String type;
     private int height;
 
@@ -63,8 +61,7 @@ public class Triangle implements InitializingBean {
         this.height = height;
     }
 
-    @Override
-    public void afterPropertiesSet() throws Exception {
+    public void myInit() {
         System.out.println("Initialize bean hook has been called from Triangle");
     }
 }
