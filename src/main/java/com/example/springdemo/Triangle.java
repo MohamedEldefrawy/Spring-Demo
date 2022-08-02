@@ -3,6 +3,10 @@ package com.example.springdemo;
 public class Triangle {
     private String type;
 
+    public Triangle(String type) {
+        this.type = type;
+    }
+
     public String getType() {
         return type;
     }

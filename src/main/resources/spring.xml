@@ -3,6 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
     <bean id="triangle" class="com.example.springdemo.Triangle">
-        <property name="type" value="Equilateral"/>
+        <constructor-arg value="Test"/>
+        <!--        <property name="type" value="Equilateral"/>-->
     </bean>
 </beans>
