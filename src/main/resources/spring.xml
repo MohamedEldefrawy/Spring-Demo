@@ -3,7 +3,6 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
     <bean id="triangle" class="com.example.springdemo.Triangle">
-        <!--        <constructor-arg value="Equilateral"/>-->
         <constructor-arg type="int" value="20"/>
         <property name="points">
             <list>
@@ -14,16 +13,14 @@
         </property>
 
     </bean>
-    <bean id="a" class="com.example.springdemo.Point">
+    <bean id="point" class="com.example.springdemo.Point" abstract="true">
         <property name="x" value="5"/>
-        <property name="y" value="5"/>
+        <property name="y" value="10"/>
     </bean>
-    <bean id="b" class="com.example.springdemo.Point">
-        <property name="x" value="5"/>
-        <property name="y" value="5"/>
+    <bean id="a" class="com.example.springdemo.Point" parent="point">
     </bean>
-    <bean id="c" class="com.example.springdemo.Point">
-        <property name="x" value="5"/>
-        <property name="y" value="5"/>
+    <bean id="b" class="com.example.springdemo.Point" parent="point">
+    </bean>
+    <bean id="c" class="com.example.springdemo.Point" parent="point">
     </bean>
 </beans>
