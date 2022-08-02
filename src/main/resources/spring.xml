@@ -5,10 +5,14 @@
     <bean id="triangle" class="com.example.springdemo.Triangle">
         <!--        <constructor-arg value="Equilateral"/>-->
         <constructor-arg type="int" value="20"/>
-        <constructor-arg ref="a"/>
-        <constructor-arg ref="b"/>
-        <constructor-arg ref="c"/>
-        <!--        <property name="type" value="Equilateral"/>-->
+        <property name="points">
+            <list>
+                <ref bean="a"/>
+                <ref bean="b"/>
+                <ref bean="c"/>
+            </list>
+        </property>
+
     </bean>
     <bean id="a" class="com.example.springdemo.Point">
         <property name="x" value="5"/>
