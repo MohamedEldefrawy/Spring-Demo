@@ -13,10 +13,21 @@
         </property>
 
     </bean>
+    <bean id="circle" class="com.example.springdemo.Circle">
+        <constructor-arg ref="circle-center"/>
+    </bean>
+
     <bean id="point" class="com.example.springdemo.Point" abstract="true">
         <property name="x" value="${pointA.pointX}"/>
         <property name="y" value="${pointA.pointY}"/>
     </bean>
+
+    <bean id="centerPoint" class="com.example.springdemo.Point" abstract="true">
+        <property name="x" value="${center.x}"/>
+        <property name="y" value="${center.y}"/>
+    </bean>
+
+    <bean id="circle-center" class="com.example.springdemo.Point" parent="centerPoint"/>
     <bean id="a" class="com.example.springdemo.Point" parent="point">
     </bean>
     <bean id="b" class="com.example.springdemo.Point" parent="point">

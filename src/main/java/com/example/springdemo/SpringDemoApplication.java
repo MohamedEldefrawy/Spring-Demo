@@ -8,13 +8,11 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class SpringDemoApplication {
 
     public static void main(String[] args) {
-//        Triangle triangle = (Triangle) new XmlBeanFactory(new ClassPathResource("spring.xml")).getBean("triangle");
-//        var context = new ClassPathXmlApplicationContext("spring.xml");
         var context = new ClassPathXmlApplicationContext("spring.xml");
         context.registerShutdownHook();
-        Triangle triangle = (Triangle) context.getBean("triangle");
+        Shape shape = (Shape) context.getBean("triangle");
 
-        triangle.draw();
+        shape.draw();
         SpringApplication.run(SpringDemoApplication.class, args);
     }
 
