@@ -14,8 +14,8 @@
 
     </bean>
     <bean id="point" class="com.example.springdemo.Point" abstract="true">
-        <property name="x" value="5"/>
-        <property name="y" value="10"/>
+        <property name="x" value="${pointA.pointX}"/>
+        <property name="y" value="${pointA.pointY}"/>
     </bean>
     <bean id="a" class="com.example.springdemo.Point" parent="point">
     </bean>
@@ -23,5 +23,9 @@
     </bean>
     <bean id="c" class="com.example.springdemo.Point" parent="point">
     </bean>
-    <bean id="postProcessor" class="com.example.springdemo.DisplayBeanNamePostProcessor"/>
+    <bean class="com.example.springdemo.DisplayBeanNamePostProcessor"/>
+    <bean class="com.example.springdemo.BeanFactoryPostProcessor"/>
+    <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+        <property name="locations" value="application.properties"/>
+    </bean>
 </beans>
