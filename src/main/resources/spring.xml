@@ -2,6 +2,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
     <bean id="triangle" class="com.example.springdemo.Triangle" init-method="myInit">
         <constructor-arg type="int" value="20"/>
         <property name="points">
@@ -13,9 +14,7 @@
         </property>
 
     </bean>
-    <bean id="circle" class="com.example.springdemo.Circle">
-        <constructor-arg ref="circle-center"/>
-    </bean>
+    <bean id="circle" class="com.example.springdemo.Circle"/>
 
     <bean id="point" class="com.example.springdemo.Point" abstract="true">
         <property name="x" value="${pointA.pointX}"/>
@@ -27,7 +26,7 @@
         <property name="y" value="${center.y}"/>
     </bean>
 
-    <bean id="circle-center" class="com.example.springdemo.Point" parent="centerPoint"/>
+    <bean id="center" class="com.example.springdemo.Point" parent="centerPoint"/>
     <bean id="a" class="com.example.springdemo.Point" parent="point">
     </bean>
     <bean id="b" class="com.example.springdemo.Point" parent="point">
@@ -39,4 +38,5 @@
     <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
         <property name="locations" value="application.properties"/>
     </bean>
+    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
 </beans>

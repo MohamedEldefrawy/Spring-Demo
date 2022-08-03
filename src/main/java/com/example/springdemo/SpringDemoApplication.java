@@ -10,7 +10,7 @@ public class SpringDemoApplication {
     public static void main(String[] args) {
         var context = new ClassPathXmlApplicationContext("spring.xml");
         context.registerShutdownHook();
-        Shape shape = (Shape) context.getBean("triangle");
+        Shape shape = (Shape) context.getBean("circle");
 
         shape.draw();
         SpringApplication.run(SpringDemoApplication.class, args);
