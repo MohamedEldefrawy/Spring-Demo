@@ -1,10 +1,29 @@
 package com.example.springdemo.model;
 
-import com.example.springdemo.service.Shape;
+import com.example.springdemo.contract.Shape;
 
 public class Triangle implements Shape {
     private String type;
     private int height;
+    private Point[] points;
+
+
+    public Triangle(int height, Point[] points) {
+        this.height = height;
+        this.points = points;
+
+    }
+
+
+    public Triangle(String type, int height) {
+        this.type = type;
+        this.height = height;
+    }
+
+    public Triangle(int height) {
+        this.height = height;
+    }
+
 
     public Point[] getPoints() {
         return points;
@@ -14,19 +33,6 @@ public class Triangle implements Shape {
         this.points = points;
     }
 
-    public Triangle(int height, Point[] points) {
-        this.height = height;
-        this.points = points;
-
-    }
-
-    private Point[] points;
-
-
-    public Triangle(String type, int height) {
-        this.type = type;
-        this.height = height;
-    }
 
     public int getHeight() {
         return height;
@@ -57,10 +63,6 @@ public class Triangle implements Shape {
             System.out.println("A Points X = " + point.getX());
             System.out.println("A Points Y = " + point.getY());
         }
-    }
-
-    public Triangle(int height) {
-        this.height = height;
     }
 
     public void myInit() {

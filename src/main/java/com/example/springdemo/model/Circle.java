@@ -1,6 +1,6 @@
 package com.example.springdemo.model;
 
-import com.example.springdemo.service.Shape;
+import com.example.springdemo.contract.Shape;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

@@ -16,7 +16,6 @@
                 <ref bean="c"/>
             </list>
         </property>
-
     </bean>
 
     <bean id="point" class="com.example.springdemo.model.Point" abstract="true">
@@ -41,5 +40,5 @@
     <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
         <property name="locations" value="application.properties"/>
     </bean>
-    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
+    <bean id="shapeService" class="com.example.springdemo.service.ShapeService"/>
 </beans>
