@@ -23,4 +23,5 @@
     </bean>
     <bean id="c" class="com.example.springdemo.Point" parent="point">
     </bean>
+    <bean id="postProcessor" class="com.example.springdemo.DisplayBeanNamePostProcessor"/>
 </beans>
