@@ -7,16 +7,6 @@
 
     <context:component-scan base-package="com.example.springdemo"/>
     <aop:aspectj-autoproxy/>
-    <bean id="triangle" class="com.example.springdemo.model.Triangle" init-method="myInit">
-        <constructor-arg type="int" value="20"/>
-        <property name="points">
-            <list>
-                <ref bean="a"/>
-                <ref bean="b"/>
-                <ref bean="c"/>
-            </list>
-        </property>
-    </bean>
 
     <bean id="point" class="com.example.springdemo.model.Point" abstract="true">
         <property name="x" value="${pointA.pointX}"/>

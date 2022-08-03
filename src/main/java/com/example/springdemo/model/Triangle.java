@@ -1,17 +1,19 @@
 package com.example.springdemo.model;
 
 import com.example.springdemo.contract.Shape;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Triangle implements Shape {
     private String type;
     private int height;
     private Point[] points;
 
 
-    public Triangle(int height, Point[] points) {
-        this.height = height;
+    @Autowired
+    public Triangle(Point[] points) {
         this.points = points;
-
     }
 
 
