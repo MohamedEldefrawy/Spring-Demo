@@ -25,5 +25,8 @@
         <property name="hibernate.connection.password">
             123
         </property>
+
+        <!--        Annotated Entity classes-->
+        <mapping class="com.example.springdemo.dto.UserDetails"/>
     </session-factory>
 </hibernate-configuration>
