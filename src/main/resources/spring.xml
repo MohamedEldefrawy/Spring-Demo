@@ -2,10 +2,12 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
 
     <context:component-scan base-package="com.example.springdemo"/>
-    <bean id="triangle" class="com.example.springdemo.Triangle" init-method="myInit">
+    <aop:aspectj-autoproxy/>
+    <bean id="triangle" class="com.example.springdemo.model.Triangle" init-method="myInit">
         <constructor-arg type="int" value="20"/>
         <property name="points">
             <list>
@@ -17,22 +19,22 @@
 
     </bean>
 
-    <bean id="point" class="com.example.springdemo.Point" abstract="true">
+    <bean id="point" class="com.example.springdemo.model.Point" abstract="true">
         <property name="x" value="${pointA.pointX}"/>
         <property name="y" value="${pointA.pointY}"/>
     </bean>
 
-    <bean id="centerPoint" class="com.example.springdemo.Point" abstract="true">
+    <bean id="centerPoint" class="com.example.springdemo.model.Point" abstract="true">
         <property name="x" value="${center.x}"/>
         <property name="y" value="${center.y}"/>
     </bean>
 
-    <bean id="center" class="com.example.springdemo.Point" parent="centerPoint"/>
-    <bean id="a" class="com.example.springdemo.Point" parent="point">
+    <bean id="center" class="com.example.springdemo.model.Point" parent="centerPoint"/>
+    <bean id="a" class="com.example.springdemo.model.Point" parent="point">
     </bean>
-    <bean id="b" class="com.example.springdemo.Point" parent="point">
+    <bean id="b" class="com.example.springdemo.model.Point" parent="point">
     </bean>
-    <bean id="c" class="com.example.springdemo.Point" parent="point">
+    <bean id="c" class="com.example.springdemo.model.Point" parent="point">
     </bean>
     <bean class="com.example.springdemo.DisplayBeanNamePostProcessor"/>
     <bean class="com.example.springdemo.BeanFactoryPostProcessor"/>

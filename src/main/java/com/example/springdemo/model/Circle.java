@@ -1,5 +1,6 @@
-package com.example.springdemo;
+package com.example.springdemo.model;
 
+import com.example.springdemo.service.Shape;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

@@ -1,4 +1,4 @@
-package com.example.springdemo;
+package com.example.springdemo.service;
 
 public interface Shape {
     public void draw();

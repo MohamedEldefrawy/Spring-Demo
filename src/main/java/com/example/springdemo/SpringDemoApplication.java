@@ -1,5 +1,6 @@
 package com.example.springdemo;
 
+import com.example.springdemo.service.Shape;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

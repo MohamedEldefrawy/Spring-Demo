@@ -1,4 +1,6 @@
-package com.example.springdemo;
+package com.example.springdemo.model;
+
+import com.example.springdemo.service.Shape;
 
 public class Triangle implements Shape {
     private String type;
