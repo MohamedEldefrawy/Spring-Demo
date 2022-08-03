@@ -11,12 +11,12 @@ public class SpringDemoApplication {
 
     public static void main(String[] args) {
         var context = new ClassPathXmlApplicationContext("spring.xml");
-        context.registerShutdownHook();
-        Shape shape = (Shape) context.getBean("triangle");
-//        var shape = context.getBean("shapeService", ShapeService.class);
+//        context.registerShutdownHook();
+//        Shape shape = (Shape) context.getBean("triangle");
+        var shape = context.getBean("shapeService", ShapeService.class);
 
-        shape.draw();
-//        System.out.println(shape.getCircle().getCenter().getX());
+//        shape.draw();
+        System.out.println(shape.getCircle().getCenter().getX());
         SpringApplication.run(SpringDemoApplication.class, args);
     }
 

@@ -66,8 +66,4 @@ public class Triangle implements Shape {
             System.out.println("A Points Y = " + point.getY());
         }
     }
-
-    public void myInit() {
-        System.out.println("Initialize bean hook has been called from Triangle");
-    }
 }
